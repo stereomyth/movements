@@ -14,6 +14,7 @@ export default {
 
   components: true,
   buildModules: ['@nuxtjs/tailwindcss'],
+  plugins: ['~plugins/init.js'],
 
   build: {},
 };
