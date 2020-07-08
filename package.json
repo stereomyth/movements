@@ -16,5 +16,12 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^2.0.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "arrowParens": "avoid",
+    "printWidth": 95,
+    "htmlWhitespaceSensitivity": "ignore"
   }
 }
