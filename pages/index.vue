@@ -16,7 +16,12 @@ export default {
       <div>{{ second }}</div>
     </div>
 
-    <Clock1 />
+    <div class="flex flex-wrap -mx-5">
+      <Clock1 numbers="twelve" />
+      <Clock1 numbers="twelve" />
+      <Clock1 numbers="twenty" />
+      <Clock1 numbers="roman" />
+    </div>
   </div>
 </template>
 
