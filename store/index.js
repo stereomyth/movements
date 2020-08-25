@@ -25,6 +25,6 @@ export const mutations = {
 
 export const actions = {
   init({ commit }) {
-    window.setInterval(() => commit('tick'), 200);
+    window.setInterval(() => commit('tick'), 100);
   },
 };
