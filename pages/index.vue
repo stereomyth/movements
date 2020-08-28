@@ -17,10 +17,11 @@ export default {
     </div>
 
     <div class="flex flex-wrap -mx-5">
-      <Clock1 numbers="twelve" />
-      <Clock1 numbers="twelve" />
-      <Clock1 numbers="twenty" />
+      <Clock1 />
+      <Clock1 crot />
+      <Clock1 numbers="twenty" :th="24" />
       <Clock1 numbers="roman" />
+      <Clock1 numbers="roman" crot />
     </div>
   </div>
 </template>

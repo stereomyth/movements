@@ -12,7 +12,7 @@ export default {
       return `transform: rotate(${this.minute * 6}deg)`;
     },
     h() {
-      return `transform: rotate(${this.hour * 30}deg)`;
+      return `transform: rotate(${this.hour * (360 / this.th)}deg)`;
     },
 
     ...mapState(['hour', 'minute', 'second']),
@@ -22,7 +22,7 @@ export default {
 
 <template>
   <div class="p-5">
-    <div class="relative w-64 h-64 border-4 border-black rounded-full">
+    <div class="relative w-64 h-64 text-sm border-4 border-black rounded-full">
       <Disc :chars="numbers" :crot="crot" />
 
       <div class="absolute inset-0" :style="s">
