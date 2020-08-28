@@ -1,16 +1,9 @@
 <script>
 import { mapState } from 'vuex';
-import { range } from 'lodash';
-
-const numTypes = {
-  twelve: range(1, 13),
-  twenty: range(1, 25),
-  sixty: range(0, 59),
-  roman: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'],
-};
 
 export default {
-  props: ['numbers'],
+  props: { numbers: {}, th: { default: 12 }, crot: Boolean },
+
   computed: {
     s() {
       return `transform: rotate(${this.second * 6}deg)`;
@@ -22,14 +15,6 @@ export default {
       return `transform: rotate(${this.hour * 30}deg)`;
     },
 
-    nums() {
-      let ns = [];
-      if (this.numbers) {
-        ns = [...numTypes[this.numbers]];
-        ns.unshift(ns.pop());
-      }
-      return ns;
-    },
     ...mapState(['hour', 'minute', 'second']),
   },
 };
@@ -38,19 +23,8 @@ export default {
 <template>
   <div class="p-5">
     <div class="relative w-64 h-64 border-4 border-black rounded-full">
-      <div
-        v-for="(n, i) in nums"
-        :key="n"
-        class="absolute inset-0"
-        :style="`transform: rotate(${i * (360 / nums.length)}deg)`"
-      >
-        <div
-          class="absolute origin-center hand"
-          :style="`transform: translateX(-50%) rotate(-${i * (360 / nums.length)}deg)`"
-        >
-          {{ n }}
-        </div>
-      </div>
+      <Disc :chars="numbers" :crot="crot" />
+
       <div class="absolute inset-0" :style="s">
         <div class="absolute border-l border-black rounded-full hand s"></div>
       </div>
