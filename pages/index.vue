@@ -22,6 +22,25 @@ export default {
       <Clock1 numbers="twenty" :th="24" />
       <Clock1 numbers="roman" />
       <Clock1 numbers="roman" crot />
+
+      <div class="clock">
+        <Hand svg="orbit1h" :t="hour" :r="12" />
+        <Hand svg="orbit1m" :t="minute" :r="60" />
+        <Hand svg="orbit1s" :t="second" :r="60" />
+      </div>
+
+      <div class="stroke-2 clock" style="stroke: #000">
+        <Hand svg="orbit1h" :t="hour" :r="12" />
+        <Hand svg="orbit1m" :t="minute" :r="60" />
+        <Hand svg="orbit1s" :t="second" :r="60" />
+      </div>
+
+      <div class="clock">
+        <Hand svg="pinch1h" :t="hour" :r="12" />
+        <Hand svg="pinch1m" :t="minute" :r="60" />
+        <Hand svg="pinch1s" :t="second" :r="60" />
+        <Disc chars="twelve" p="15" />
+      </div>
     </div>
   </div>
 </template>
