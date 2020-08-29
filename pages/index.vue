@@ -26,4 +26,8 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style lang="postcss">
+.clock {
+  @apply relative w-64 h-64 text-sm border-4 border-black rounded-full m-5;
+}
+</style>
