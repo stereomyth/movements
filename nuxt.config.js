@@ -13,7 +13,7 @@ export default {
   },
 
   components: true,
-  buildModules: ['@nuxtjs/tailwindcss'],
+  buildModules: ['@nuxtjs/tailwindcss', '@nuxtjs/svg'],
   plugins: ['~plugins/init.js'],
 
   build: {},
