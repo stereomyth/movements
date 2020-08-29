@@ -9,7 +9,7 @@ const numTypes = {
 };
 
 export default {
-  props: { chars: { default: 'twelve' }, crot: Boolean },
+  props: { chars: { default: 'twelve' }, crot: Boolean, p: { default: 0 } },
 
   computed: {
     characters() {
@@ -27,7 +27,7 @@ export default {
     <div
       v-for="(n, i) in characters"
       :key="n"
-      :style="`transform: rotate(${(i + 1) * rotation}deg)`"
+      :style="`padding: ${p}%; transform: rotate(${(i + 1) * rotation}deg)`"
       class="absolute inset-0"
     >
       <div
