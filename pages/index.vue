@@ -2,7 +2,16 @@
 import { mapState } from 'vuex';
 
 export default {
-  computed: mapState(['now', 'hour', 'minute', 'second']),
+  computed: {
+    digits() {
+      return this.now
+        ? this.now.format('hhmmss')
+        : // .toString()
+          // .split('')
+          [];
+    },
+    ...mapState(['now', 'hour', 'minute', 'second']),
+  },
 };
 </script>
 
@@ -14,6 +23,17 @@ export default {
       <div>{{ hour }}</div>
       <div>{{ minute }}</div>
       <div>{{ second }}</div>
+    </div>
+
+    <!-- <pre>{{ now.format('hhmmss')[]1 }}</pre> -->
+
+    <div class="relative w-64 h-10 overflow-hidden border border-red-600">
+      <Scroll :t="digits[0]" style="left:0px" />
+      <Scroll :t="digits[1]" style="left:40px" />
+      <Scroll :t="digits[2]" :clip="6" style="left:80px" />
+      <Scroll :t="digits[3]" style="left:120px" />
+      <Scroll :t="digits[4]" :clip="6" style="left:160px" />
+      <Scroll :t="digits[5]" style="left:200px" />
     </div>
 
     <div class="flex flex-wrap -mx-5">
