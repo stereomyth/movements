@@ -9,6 +9,8 @@ export const state = () => ({
   hour: 0,
   minute: 0,
   second: 0,
+
+  hour12: 0,
 });
 
 export const mutations = {
@@ -20,6 +22,8 @@ export const mutations = {
     state.hour = m.hour();
     state.minute = m.minute();
     state.second = m.second();
+
+    state.hour12 = m.format('h');
   },
 };
 

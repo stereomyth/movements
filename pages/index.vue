@@ -5,7 +5,7 @@ export default {
   computed: {
     digits() {
       return this.now
-        ? this.now.format('hhmmss')
+        ? this.now.format('HHmmss')
         : // .toString()
           // .split('')
           [];
@@ -25,6 +25,10 @@ export default {
       <div>{{ second }}</div>
     </div>
 
+    <Lang1 />
+
+    <hr class="my-10" />
+
     <!-- <pre>{{ now.format('hhmmss')[]1 }}</pre> -->
 
     <div class="relative w-64 h-10 overflow-hidden border border-red-600">
@@ -35,6 +39,8 @@ export default {
       <Scroll :t="digits[4]" :clip="6" style="left:160px" />
       <Scroll :t="digits[5]" style="left:200px" />
     </div>
+
+    <hr class="my-10" />
 
     <div class="flex flex-wrap -mx-5">
       <Clock1 />
